@@ -1,6 +1,6 @@
 {
   "name": "create-pfeifer",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Scaffold new npm packages with @pfeiferio standards.",
   "author": "Pascal Pfeifer <pascal@pfeifer.zone>",
   "type": "module",
