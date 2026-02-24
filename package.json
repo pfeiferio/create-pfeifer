@@ -1,6 +1,6 @@
 {
   "name": "create-pfeifer",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Scaffold new npm packages with @pfeiferio standards.",
   "author": "Pascal Pfeifer <pascal@pfeifer.zone>",
   "type": "module",
@@ -28,15 +28,18 @@
   "bugs": {
     "url": "https://github.com/pfeiferio/create-pfeifer/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://github.com/pfeiferio/create-pfeifer#readme",
   "scripts": {
     "prepublishOnly": "npm test",
     "build": "npm run clean && tsc && cp -r templates dist/templates",
     "clean": "rm -rf dist",
-    "test": "npm run build && node --test 'test/'",
-    "test:coverage": "npm run build && node --test 'test/' --experimental-test-coverage --test-coverage-exclude='test/**'",
-    "test:coverage:c8": "npm run build && npx c8 node --test 'test/'",
-    "test:coverage:lcov": "npm run build && node --enable-source-maps --test 'test/' --experimental-test-coverage --test-coverage-exclude='test/**' --test-reporter=lcov --test-reporter-destination=lcov.info",
+    "test": "npm run build && node --test",
+    "test:coverage": "npm run build && node --test --experimental-test-coverage --test-coverage-exclude='test/**'",
+    "test:coverage:c8": "npm run build && npx c8 node --test",
+    "test:coverage:lcov": "npm run build && npx c8 --src src node --enable-source-maps --test",
     "dev": "npm run build && node dist/cli/cli.js"
   },
   "devDependencies": {
